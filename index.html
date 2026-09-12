@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="Solvi IA — Inteligência Artificial e automação para atendimento, vendas e processos. Soluções práticas, próximas e feitas para o seu negócio.">
+  <meta property="og:title" content="Solvi IA | Inteligência que resolve">
+  <meta property="og:description" content="Menos tarefas. Mais tempo para crescer. Conheça soluções de IA e automação para o seu negócio.">
+  <title>Solvi IA | Inteligência que resolve</title>
+  <link rel="icon" href="assets/logo-solvi.png">
+  <style>
+    :root {
+      --bg:#050b16;
+      --bg2:#081525;
+      --panel:#0b1728;
+      --panel2:#0e1e31;
+      --text:#f7f9fc;
+      --muted:#aebdce;
+      --green:#05e27a;
+      --cyan:#21dbe8;
+      --blue:#2684ff;
+      --purple:#7147ff;
+      --line:rgba(255,255,255,.10);
+      --shadow:0 22px 60px rgba(0,0,0,.32);
+      --radius:26px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      background:
+        radial-gradient(circle at 12% 5%,rgba(5,226,122,.10),transparent 23%),
+        radial-gradient(circle at 88% 13%,rgba(38,132,255,.13),transparent 28%),
+        linear-gradient(180deg,var(--bg),#06101c 48%,#050b16);
+      color:var(--text);
+      line-height:1.55;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(1180px,92%);margin:auto}
+    .muted{color:var(--muted)}
+    .accent{background:linear-gradient(90deg,var(--green),var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border:1px solid var(--line);
+      border-radius:999px;background:rgba(255,255,255,.035);
+      font-size:13px;font-weight:700;color:#dbe9f8;
+    }
+
+    header{
+      position:sticky;top:0;z-index:40;
+      background:rgba(5,11,22,.78);backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);
+    }
+    nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:.2px}
+    .brand img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+    .navlinks{display:flex;gap:24px;align-items:center;color:#c7d3e0;font-size:14px;font-weight:650}
+    .navlinks a:hover{color:white}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      min-height:48px;padding:0 19px;border-radius:14px;
+      border:1px solid var(--line);font-weight:800;
+      transition:.2s ease;cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.2)}
+    .btn-primary{
+      color:#041018;border:0;
+      background:linear-gradient(105deg,var(--green),var(--cyan),#68a8ff);
+      box-shadow:0 10px 30px rgba(33,219,232,.16);
+    }
+    .btn-soft{background:rgba(255,255,255,.045)}
+    .menu-btn{display:none}
+
+    .hero{position:relative;min-height:720px;display:grid;align-items:center;padding:88px 0 76px;isolation:isolate}
+    .hero::before{
+      content:"";position:absolute;inset:0;z-index:-2;
+      background:url("assets/aurora-direita.webp") center/cover no-repeat;
+      opacity:.44;
+      mask-image:linear-gradient(to bottom,black 0 78%,transparent 100%);
+    }
+    .hero::after{
+      content:"";position:absolute;inset:0;z-index:-1;
+      background:linear-gradient(90deg,rgba(5,11,22,.96) 0%,rgba(5,11,22,.90) 42%,rgba(5,11,22,.42) 76%,rgba(5,11,22,.18) 100%);
+    }
+    .hero-copy{max-width:710px}
+    h1{font-size:clamp(48px,7vw,88px);line-height:.96;letter-spacing:-3px;margin:22px 0 24px}
+    .lead{font-size:clamp(18px,2vw,22px);max-width:720px;color:#c1cfdd}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;color:#aab9c8;font-size:14px}
+    .trust span{display:flex;gap:8px;align-items:center}
+
+    section{padding:84px 0}
+    h2{font-size:clamp(34px,4.6vw,58px);line-height:1.05;letter-spacing:-1.8px;margin:0 0 16px}
+    .section-lead{font-size:18px;color:var(--muted);max-width:760px;margin:0}
+
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+    .service{
+      min-height:230px;padding:26px;border:1px solid var(--line);
+      border-radius:var(--radius);background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
+      box-shadow:0 12px 34px rgba(0,0,0,.16);
+    }
+    .service .icon{font-size:29px}
+    .service h3{font-size:21px;margin:18px 0 10px}
+    .service p{color:var(--muted);margin:0}
+
+    .brand-showcase{
+      border:1px solid var(--line);border-radius:32px;overflow:hidden;
+      background:#040b16;box-shadow:var(--shadow)
+    }
+    .brand-showcase img{width:100%;aspect-ratio:1942/809;object-fit:cover}
+
+    .how{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center}
+    .steps{display:grid;gap:14px}
+    .step{
+      display:grid;grid-template-columns:44px 1fr;gap:15px;
+      padding:18px 18px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.035)
+    }
+    .n{
+      width:44px;height:44px;border-radius:13px;display:grid;place-items:center;
+      background:linear-gradient(135deg,rgba(5,226,122,.15),rgba(113,71,255,.18));
+      border:1px solid rgba(255,255,255,.1);font-weight:900
+    }
+    .step strong{display:block;margin-bottom:3px}
+
+    .people-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:30px}
+    .live-badge{color:#a9f9cd}
+    .people{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .person{
+      position:relative;border:1px solid var(--line);border-radius:28px;overflow:hidden;
+      background:#fff;box-shadow:var(--shadow)
+    }
+    .person img{width:100%;height:auto}
+    .person-meta{
+      display:flex;justify-content:space-between;gap:12px;align-items:center;
+      padding:14px 16px;background:#07111f;color:#dbe6f2;border-top:1px solid rgba(255,255,255,.08)
+    }
+    .person-meta small{color:#91a5b9}
+    .person-actions{display:flex;gap:8px;flex-wrap:wrap}
+    .mini{
+      padding:8px 10px;border-radius:10px;border:1px solid var(--line);
+      background:rgba(255,255,255,.05);font-weight:750;font-size:13px
+    }
+    .mini:hover{background:rgba(255,255,255,.09)}
+
+    /* Clickable areas over the images */
+    .hotspot{position:absolute;display:block;z-index:3;border-radius:12px}
+    .hotspot:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+    .helena-email{left:55%;top:48%;width:38%;height:11%}
+    .helena-wa{left:55%;top:58%;width:31%;height:12%}
+    .lucas-email{left:53%;top:66%;width:16%;height:18%}
+    .lucas-wa{left:69%;top:66%;width:16%;height:18%}
+    .lucas-site{left:85%;top:66%;width:14%;height:18%}
+
+    .team-preview{
+      display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;
+      padding:28px;border:1px solid var(--line);border-radius:32px;
+      background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.022))
+    }
+    .team-link{position:relative;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.10)}
+    .team-link img{width:100%}
+    .soon{
+      position:absolute;inset:auto 16px 16px 16px;padding:12px 15px;border-radius:14px;
+      background:rgba(5,11,22,.78);backdrop-filter:blur(12px);border:1px solid var(--line);
+      display:flex;justify-content:space-between;align-items:center;gap:14px
+    }
+    .soon b{color:#b8fbd5}
+
+    .cta{
+      position:relative;overflow:hidden;padding:48px;border:1px solid var(--line);
+      border-radius:34px;background:linear-gradient(135deg,rgba(5,226,122,.10),rgba(38,132,255,.10),rgba(113,71,255,.11));
+      box-shadow:var(--shadow);display:flex;justify-content:space-between;align-items:center;gap:30px
+    }
+    .cta h2{font-size:clamp(34px,4vw,52px);max-width:700px}
+    .contact-note{color:#b6c5d5;max-width:640px}
+
+    footer{border-top:1px solid var(--line);padding:30px 0 38px;color:#8295a9;font-size:14px}
+    .foot{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}
+    .foot-logo{display:flex;align-items:center;gap:10px;color:#c9d5e2;font-weight:750}
+    .foot-logo img{width:34px;height:34px;border-radius:50%}
+
+    .modal{
+      position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.78);backdrop-filter:blur(8px);
+      display:none;place-items:center;padding:20px
+    }
+    .modal.open{display:grid}
+    .modal-card{width:min(1000px,96vw);max-height:92vh;overflow:auto;background:#07111f;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}
+    .modal-card img{width:100%}
+    .modal-bar{padding:15px 18px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+    .close{border:1px solid var(--line);background:rgba(255,255,255,.05);color:white;border-radius:11px;padding:8px 12px;cursor:pointer}
+
+    @media(max-width:900px){
+      .navlinks{display:none}
+      .navlinks.open{
+        display:flex;position:absolute;left:4%;right:4%;top:70px;flex-direction:column;align-items:stretch;
+        padding:18px;background:#07111f;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)
+      }
+      .menu-btn{display:inline-flex}
+      .desktop-cta{display:none}
+      .hero{min-height:650px;padding-top:68px}
+      .hero::after{background:linear-gradient(90deg,rgba(5,11,22,.96),rgba(5,11,22,.82))}
+      .services,.people,.how,.team-preview{grid-template-columns:1fr}
+      .people-head{align-items:start;flex-direction:column}
+      .cta{flex-direction:column;align-items:flex-start}
+    }
+    @media(max-width:620px){
+      nav{height:70px}
+      .brand span{display:none}
+      h1{letter-spacing:-2px}
+      section{padding:64px 0}
+      .hero{min-height:610px}
+      .hero::before{background-image:url("assets/aurora-esquerda.webp");opacity:.33}
+      .cta{padding:30px 22px}
+      .person-meta{align-items:flex-start;flex-direction:column}
+      .team-preview{padding:16px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav aria-label="Navegação principal">
+      <a class="brand" href="#inicio" aria-label="Solvi IA - início">
+        <img src="assets/logo-solvi.png" alt="Logo Solvi IA">
+        <span>Solvi IA</span>
+      </a>
+      <div class="navlinks" id="navlinks">
+        <a href="#solucoes">Soluções</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#quem-atende">Quem atende</a>
+        <a href="#equipe">Equipe</a>
+      </div>
+      <a class="btn btn-primary desktop-cta" href="https://wa.me/5554996349062?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Solvi%20IA." target="_blank" rel="noopener">Vamos conversar</a>
+      <button class="btn btn-soft menu-btn" id="menuBtn" aria-label="Abrir menu">Menu</button>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap hero-copy">
+      <span class="pill">Inteligência Artificial aplicada ao que importa</span>
+      <h1>Menos tarefas.<br><span class="accent">Mais tempo para crescer.</span></h1>
+      <p class="lead">A Solvi aproxima a Inteligência Artificial da rotina da sua empresa com atendimento, automação e apoio comercial sem complicação — começando pelo que realmente precisa ser resolvido.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://wa.me/5554996349062?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Solvi%20IA." target="_blank" rel="noopener">💬 Quero saber mais</a>
+        <a class="btn btn-soft" href="mailto:contato@solvi.ia.br">✉️ Fale por e-mail</a>
+      </div>
+      <div class="trust">
+        <span>✓ Conversa humana</span>
+        <span>✓ Implementação por etapas</span>
+        <span>✓ Solução sob medida</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="solucoes">
+    <div class="wrap">
+      <span class="pill">Soluções</span>
+      <h2 style="margin-top:16px">Tecnologia que ajuda a empresa a <span class="accent">andar melhor.</span></h2>
+      <p class="section-lead">Começamos pequeno, validamos na prática e evoluímos junto com a operação.</p>
+      <div class="services">
+        <article class="service"><div class="icon">💬</div><h3>Atendimento inteligente</h3><p>Organize entradas, respostas e encaminhamentos para reduzir espera e deixar o cliente mais bem atendido.</p></article>
+        <article class="service"><div class="icon">📈</div><h3>Vendas com apoio da IA</h3><p>Estruture contatos, qualifique oportunidades e ajude o comercial a chegar mais preparado à próxima conversa.</p></article>
+        <article class="service"><div class="icon">⚙️</div><h3>Automação útil</h3><p>Automatize tarefas repetitivas e conecte processos sem transformar a rotina em um projeto complicado.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Identidade Solvi">
+    <div class="wrap">
+      <div class="brand-showcase">
+        <img src="assets/banner-solvi.webp" alt="Solvi IA — Atendimento, Vendas, Suporte, Automação e Inteligência Artificial">
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona">
+    <div class="wrap how">
+      <div>
+        <span class="pill">Como funciona</span>
+        <h2 style="margin-top:16px">Primeiro entendemos.<br>Depois <span class="accent">automatizamos.</span></h2>
+        <p class="section-lead">A conversa começa pelo problema real da sua empresa, não pela tecnologia.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><div><strong>Você conta onde dói</strong><span class="muted">Entendemos rotina, gargalos e o que hoje toma tempo da equipe.</span></div></div>
+        <div class="step"><div class="n">2</div><div><strong>Desenhamos um caminho simples</strong><span class="muted">Escolhemos o ponto em que a IA pode gerar ganho real sem exagero.</span></div></div>
+        <div class="step"><div class="n">3</div><div><strong>Testamos e evoluímos</strong><span class="muted">A solução entra por etapas, com espaço para ajustar antes de escalar.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quem-atende">
+    <div class="wrap">
+      <div class="people-head">
+        <div>
+          <span class="pill live-badge">● Atendimento inicial ativo</span>
+          <h2 style="margin-top:16px">Você fala com <span class="accent">pessoas próximas da operação.</span></h2>
+          <p class="section-lead">Neste primeiro momento, o contato da Solvi é conduzido por Lucas Toscan e Helena Valença.</p>
+        </div>
+      </div>
+
+      <div class="people">
+        <article class="person" aria-label="Contato Helena Valença">
+          <img src="assets/helena-valenca.webp" alt="Helena Valença — Atendimento Solvi">
+          <div class="person-meta">
+            <div><strong>Helena Valença</strong><br><small>Contato & Atendimento</small></div>
+            <div class="person-actions">
+              <a class="mini" href="https://wa.me/5554996349062?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Solvi%20IA." target="_blank" rel="noopener">WhatsApp</a>
+              <a class="mini" href="mailto:contato@solvi.ia.br" aria-label="Enviar e-mail para Helena Valença">E-mail</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="person" aria-label="Contato Lucas Toscan">
+          <img src="assets/lucas-toscan.webp" alt="Lucas Toscan — CEO e Fundador da Solvi">
+          <div class="person-meta">
+            <div><strong>Lucas Toscan</strong><br><small>CEO & Fundador</small></div>
+            <div class="person-actions">
+              <a class="mini" href="https://wa.me/5554996349062?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Solvi%20IA." target="_blank" rel="noopener">WhatsApp</a>
+              <a class="mini" href="mailto:lucas@solvi.ia.br" aria-label="Enviar e-mail para Lucas Toscan">E-mail</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipe">
+    <div class="wrap">
+      <div class="team-preview">
+        <button class="team-link" id="teamOpen" style="padding:0;background:none;color:inherit;text-align:left;cursor:pointer" aria-label="Ver equipe Solvi em preparação">
+          <img src="assets/equipe-solvi.webp" alt="Equipe de agentes Solvi em preparação">
+          <span class="soon"><span><b>Equipe Solvi</b><br><small>Estrutura completa em preparação</small></span><strong>Ver prévia →</strong></span>
+        </button>
+        <div>
+          <span class="pill">Em breve</span>
+          <h2 style="margin-top:16px">Uma equipe especializada para cada etapa.</h2>
+          <p class="section-lead">Atendimento, comercial, suporte, financeiro, administrativo e SAC fazem parte da estrutura planejada. A operação completa ainda será ativada gradualmente.</p>
+          <div class="actions">
+            <a class="btn btn-soft" href="https://wa.me/5554996349062?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Solvi%20IA." target="_blank" rel="noopener">Quero acompanhar a Solvi</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <span class="pill">Vamos conversar?</span>
+          <h2 style="margin-top:16px">Conte o que você quer melhorar. A gente começa por aí.</h2>
+          <p class="contact-note">Sem formulário longo. Você pode falar direto pelo WhatsApp com a mensagem já pronta ou enviar um e-mail para <strong>contato@solvi.ia.br</strong>.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://wa.me/5554996349062?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Solvi%20IA." target="_blank" rel="noopener">💬 Quero saber mais</a>
+          <a class="btn btn-soft" href="mailto:contato@solvi.ia.br">✉️ Fale por e-mail</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="foot-logo"><img src="assets/logo-solvi.png" alt=""><span>Solvi IA · Inteligência que resolve.</span></div>
+    <span>© 2026 Solvi IA. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+<div class="modal" id="teamModal" role="dialog" aria-modal="true" aria-label="Prévia da equipe Solvi">
+  <div class="modal-card">
+    <img src="assets/equipe-solvi.webp" alt="Prévia da equipe Solvi">
+    <div class="modal-bar">
+      <div><strong>Equipe Solvi</strong><br><span class="muted">Em preparação — ativação gradual dos setores.</span></div>
+      <button class="close" id="teamClose">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navlinks = document.getElementById('navlinks');
+  menuBtn?.addEventListener('click', () => navlinks.classList.toggle('open'));
+  navlinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navlinks.classList.remove('open')));
+
+  const teamOpen = document.getElementById('teamOpen');
+  const teamModal = document.getElementById('teamModal');
+  const teamClose = document.getElementById('teamClose');
+  teamOpen?.addEventListener('click', () => teamModal.classList.add('open'));
+  teamClose?.addEventListener('click', () => teamModal.classList.remove('open'));
+  teamModal?.addEventListener('click', e => { if (e.target === teamModal) teamModal.classList.remove('open'); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') teamModal?.classList.remove('open'); });
+</script>
+</body>
+</html>
