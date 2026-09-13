@@ -25,6 +25,7 @@
       --shadow:0 22px 60px rgba(0,0,0,.32);
       --radius:26px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -38,123 +39,321 @@
       line-height:1.55;
       overflow-x:hidden;
     }
+
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
     .wrap{width:min(1180px,92%);margin:auto}
     .muted{color:var(--muted)}
-    .accent{background:linear-gradient(90deg,var(--green),var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .accent{
+      background:linear-gradient(90deg,var(--green),var(--cyan),var(--purple));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent
+    }
+
     .pill{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 12px;border:1px solid var(--line);
-      border-radius:999px;background:rgba(255,255,255,.035);
-      font-size:13px;font-weight:700;color:#dbe9f8;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.035);
+      font-size:13px;
+      font-weight:700;
+      color:#dbe9f8;
     }
 
     header{
-      position:sticky;top:0;z-index:40;
-      background:rgba(5,11,22,.78);backdrop-filter:blur(18px);
+      position:sticky;
+      top:0;
+      z-index:40;
+      background:rgba(5,11,22,.78);
+      backdrop-filter:blur(18px);
       border-bottom:1px solid var(--line);
     }
-    nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:.2px}
-    .brand img{width:46px;height:46px;border-radius:50%;object-fit:cover}
-    .navlinks{display:flex;gap:24px;align-items:center;color:#c7d3e0;font-size:14px;font-weight:650}
-    .navlinks a:hover{color:white}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:9px;
-      min-height:48px;padding:0 19px;border-radius:14px;
-      border:1px solid var(--line);font-weight:800;
-      transition:.2s ease;cursor:pointer;
+
+    nav{
+      height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px
     }
-    .btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.2)}
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:850;
+      letter-spacing:.2px
+    }
+
+    .brand img{
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      object-fit:cover
+    }
+
+    .navlinks{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      color:#c7d3e0;
+      font-size:14px;
+      font-weight:650
+    }
+
+    .navlinks a:hover{color:white}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      min-height:48px;
+      padding:0 19px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      font-weight:800;
+      transition:.2s ease;
+      cursor:pointer;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(255,255,255,.2)
+    }
+
     .btn-primary{
-      color:#041018;border:0;
+      color:#041018;
+      border:0;
       background:linear-gradient(105deg,var(--green),var(--cyan),#68a8ff);
       box-shadow:0 10px 30px rgba(33,219,232,.16);
     }
+
     .btn-soft{background:rgba(255,255,255,.045)}
-.menu-btn{
-  display:none;
-  color:#041018;
-  background:linear-gradient(105deg,var(--green),var(--cyan),#68a8ff);
-  border:0;
-  box-shadow:0 10px 30px rgba(33,219,232,.16);
-  font-weight:800;
-}
-    .hero{position:relative;min-height:720px;display:grid;align-items:center;padding:88px 0 76px;isolation:isolate}
+
+    .menu-btn{
+      display:none;
+      color:#041018;
+      background:linear-gradient(105deg,var(--green),var(--cyan),#68a8ff);
+      border:0;
+      box-shadow:0 10px 30px rgba(33,219,232,.16);
+      font-weight:800;
+    }
+
+    .hero{
+      position:relative;
+      min-height:720px;
+      display:grid;
+      align-items:center;
+      padding:88px 0 76px;
+      isolation:isolate
+    }
+
     .hero::before{
-      content:"";position:absolute;inset:0;z-index:-2;
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-2;
       background:url("assets/aurora-direita.webp") center/cover no-repeat;
       opacity:.44;
       mask-image:linear-gradient(to bottom,black 0 78%,transparent 100%);
     }
+
     .hero::after{
-      content:"";position:absolute;inset:0;z-index:-1;
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-1;
       background:linear-gradient(90deg,rgba(5,11,22,.96) 0%,rgba(5,11,22,.90) 42%,rgba(5,11,22,.42) 76%,rgba(5,11,22,.18) 100%);
     }
+
     .hero-copy{max-width:710px}
-    h1{font-size:clamp(48px,7vw,88px);line-height:.96;letter-spacing:-3px;margin:22px 0 24px}
-    .lead{font-size:clamp(18px,2vw,22px);max-width:720px;color:#c1cfdd}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-    .trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:30px;color:#aab9c8;font-size:14px}
-    .trust span{display:flex;gap:8px;align-items:center}
+    h1{
+      font-size:clamp(48px,7vw,88px);
+      line-height:.96;
+      letter-spacing:-3px;
+      margin:22px 0 24px
+    }
+
+    .lead{
+      font-size:clamp(18px,2vw,22px);
+      max-width:720px;
+      color:#c1cfdd
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:30px
+    }
+
+    .trust{
+      display:flex;
+      gap:22px;
+      flex-wrap:wrap;
+      margin-top:30px;
+      color:#aab9c8;
+      font-size:14px
+    }
+
+    .trust span{
+      display:flex;
+      gap:8px;
+      align-items:center
+    }
 
     section{padding:84px 0}
-    h2{font-size:clamp(34px,4.6vw,58px);line-height:1.05;letter-spacing:-1.8px;margin:0 0 16px}
-    .section-lead{font-size:18px;color:var(--muted);max-width:760px;margin:0}
 
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+    h2{
+      font-size:clamp(34px,4.6vw,58px);
+      line-height:1.05;
+      letter-spacing:-1.8px;
+      margin:0 0 16px
+    }
+
+    .section-lead{
+      font-size:18px;
+      color:var(--muted);
+      max-width:760px;
+      margin:0
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:34px
+    }
+
     .service{
-      min-height:230px;padding:26px;border:1px solid var(--line);
-      border-radius:var(--radius);background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
+      min-height:230px;
+      padding:26px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
       box-shadow:0 12px 34px rgba(0,0,0,.16);
     }
+
     .service .icon{font-size:29px}
     .service h3{font-size:21px;margin:18px 0 10px}
     .service p{color:var(--muted);margin:0}
 
     .brand-showcase{
-      border:1px solid var(--line);border-radius:32px;overflow:hidden;
-      background:#040b16;box-shadow:var(--shadow)
+      border:1px solid var(--line);
+      border-radius:32px;
+      overflow:hidden;
+      background:#040b16;
+      box-shadow:var(--shadow)
     }
-    .brand-showcase img{width:100%;aspect-ratio:1942/809;object-fit:cover}
 
-    .how{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center}
+    .brand-showcase img{
+      width:100%;
+      aspect-ratio:1942/809;
+      object-fit:cover
+    }
+
+    .how{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:54px;
+      align-items:center
+    }
+
     .steps{display:grid;gap:14px}
+
     .step{
-      display:grid;grid-template-columns:44px 1fr;gap:15px;
-      padding:18px 18px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.035)
+      display:grid;
+      grid-template-columns:44px 1fr;
+      gap:15px;
+      padding:18px 18px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.035)
     }
+
     .n{
-      width:44px;height:44px;border-radius:13px;display:grid;place-items:center;
+      width:44px;
+      height:44px;
+      border-radius:13px;
+      display:grid;
+      place-items:center;
       background:linear-gradient(135deg,rgba(5,226,122,.15),rgba(113,71,255,.18));
-      border:1px solid rgba(255,255,255,.1);font-weight:900
+      border:1px solid rgba(255,255,255,.1);
+      font-weight:900
     }
+
     .step strong{display:block;margin-bottom:3px}
 
-    .people-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:30px}
+    .people-head{
+      display:flex;
+      justify-content:space-between;
+      gap:24px;
+      align-items:end;
+      margin-bottom:30px
+    }
+
     .live-badge{color:#a9f9cd}
-    .people{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+
+    .people{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px
+    }
+
     .person{
-      position:relative;border:1px solid var(--line);border-radius:28px;overflow:hidden;
-      background:#fff;box-shadow:var(--shadow)
+      position:relative;
+      border:1px solid var(--line);
+      border-radius:28px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow:var(--shadow)
     }
+
     .person img{width:100%;height:auto}
+
     .person-meta{
-      display:flex;justify-content:space-between;gap:12px;align-items:center;
-      padding:14px 16px;background:#07111f;color:#dbe6f2;border-top:1px solid rgba(255,255,255,.08)
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      padding:14px 16px;
+      background:#07111f;
+      color:#dbe6f2;
+      border-top:1px solid rgba(255,255,255,.08)
     }
+
     .person-meta small{color:#91a5b9}
     .person-actions{display:flex;gap:8px;flex-wrap:wrap}
+
     .mini{
-      padding:8px 10px;border-radius:10px;border:1px solid var(--line);
-      background:rgba(255,255,255,.05);font-weight:750;font-size:13px
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      font-weight:750;
+      font-size:13px
     }
+
     .mini:hover{background:rgba(255,255,255,.09)}
 
     /* Clickable areas over the images */
-    .hotspot{position:absolute;display:block;z-index:3;border-radius:12px}
-    .hotspot:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+    .hotspot{
+      position:absolute;
+      display:block;
+      z-index:3;
+      border-radius:12px
+    }
+
+    .hotspot:focus-visible{
+      outline:3px solid var(--cyan);
+      outline-offset:2px
+    }
+
     .helena-email{left:55%;top:48%;width:38%;height:11%}
     .helena-wa{left:55%;top:58%;width:31%;height:12%}
     .lucas-email{left:53%;top:66%;width:16%;height:18%}
@@ -162,48 +361,199 @@
     .lucas-site{left:85%;top:66%;width:14%;height:18%}
 
     .team-preview{
-      display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;
-      padding:28px;border:1px solid var(--line);border-radius:32px;
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:34px;
+      align-items:center;
+      padding:28px;
+      border:1px solid var(--line);
+      border-radius:32px;
       background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.022))
     }
-    .team-link{position:relative;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.10)}
-    .team-link img{width:100%}
-    .soon{
-      position:absolute;inset:auto 16px 16px 16px;padding:12px 15px;border-radius:14px;
-      background:rgba(5,11,22,.78);backdrop-filter:blur(12px);border:1px solid var(--line);
-      display:flex;justify-content:space-between;align-items:center;gap:14px
+
+    .team-link{
+      position:relative;
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10)
     }
+
+    .team-link img{width:100%}
+
+    .soon{
+      position:absolute;
+      inset:auto 16px 16px 16px;
+      padding:12px 15px;
+      border-radius:14px;
+      background:rgba(5,11,22,.78);
+      backdrop-filter:blur(12px);
+      border:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px
+    }
+
     .soon b{color:#b8fbd5}
 
-    .cta{
-      position:relative;overflow:hidden;padding:48px;border:1px solid var(--line);
-      border-radius:34px;background:linear-gradient(135deg,rgba(5,226,122,.10),rgba(38,132,255,.10),rgba(113,71,255,.11));
-      box-shadow:var(--shadow);display:flex;justify-content:space-between;align-items:center;gap:30px
+    /* Redes sociais */
+    .social-follow{
+      margin-top:30px;
     }
+
+    .social-follow-title{
+      display:block;
+      margin-bottom:14px;
+      color:#dbe6f2;
+      font-size:16px;
+      font-weight:800;
+    }
+
+    .social-links{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .social-link{
+      width:52px;
+      height:52px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:15px;
+      border:0;
+      background:linear-gradient(105deg,var(--green),var(--cyan),#68a8ff);
+      color:#041018;
+      transition:.2s ease;
+      box-shadow:0 10px 26px rgba(0,0,0,.16);
+    }
+
+    .social-link:hover{
+      transform:translateY(-2px);
+      background:linear-gradient(105deg,#25ef91,var(--cyan),#7ab5ff);
+      box-shadow:0 12px 30px rgba(33,219,232,.18);
+    }
+
+    .social-link:focus-visible{
+      outline:3px solid var(--cyan);
+      outline-offset:3px;
+    }
+
+    .social-link svg{
+      width:25px;
+      height:25px;
+      display:block;
+      fill:currentColor;
+    }
+
+    .cta{
+      position:relative;
+      overflow:hidden;
+      padding:48px;
+      border:1px solid var(--line);
+      border-radius:34px;
+      background:linear-gradient(135deg,rgba(5,226,122,.10),rgba(38,132,255,.10),rgba(113,71,255,.11));
+      box-shadow:var(--shadow);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:30px
+    }
+
     .cta h2{font-size:clamp(34px,4vw,52px);max-width:700px}
     .contact-note{color:#b6c5d5;max-width:640px}
 
-    footer{border-top:1px solid var(--line);padding:30px 0 38px;color:#8295a9;font-size:14px}
-    .foot{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}
-    .foot-logo{display:flex;align-items:center;gap:10px;color:#c9d5e2;font-weight:750}
-    .foot-logo img{width:34px;height:34px;border-radius:50%}
+    footer{
+      border-top:1px solid var(--line);
+      padding:30px 0 38px;
+      color:#8295a9;
+      font-size:14px
+    }
+
+    .foot{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap
+    }
+
+    .foot-logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:#c9d5e2;
+      font-weight:750
+    }
+
+    .foot-logo img{
+      width:34px;
+      height:34px;
+      border-radius:50%
+    }
 
     .modal{
-      position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.78);backdrop-filter:blur(8px);
-      display:none;place-items:center;padding:20px
+      position:fixed;
+      inset:0;
+      z-index:90;
+      background:rgba(0,0,0,.78);
+      backdrop-filter:blur(8px);
+      display:none;
+      place-items:center;
+      padding:20px
     }
+
     .modal.open{display:grid}
-    .modal-card{width:min(1000px,96vw);max-height:92vh;overflow:auto;background:#07111f;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}
+
+    .modal-card{
+      width:min(1000px,96vw);
+      max-height:92vh;
+      overflow:auto;
+      background:#07111f;
+      border:1px solid var(--line);
+      border-radius:24px;
+      box-shadow:var(--shadow)
+    }
+
     .modal-card img{width:100%}
-    .modal-bar{padding:15px 18px;display:flex;justify-content:space-between;align-items:center;gap:16px}
-    .close{border:1px solid var(--line);background:rgba(255,255,255,.05);color:white;border-radius:11px;padding:8px 12px;cursor:pointer}
+
+    .modal-bar{
+      padding:15px 18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px
+    }
+
+    .close{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      color:white;
+      border-radius:11px;
+      padding:8px 12px;
+      cursor:pointer
+    }
 
     @media(max-width:900px){
       .navlinks{display:none}
+
       .navlinks.open{
-        display:flex;position:absolute;left:4%;right:4%;top:70px;flex-direction:column;align-items:stretch;
-        padding:18px;background:#07111f;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)
+        display:flex;
+        position:absolute;
+        left:4%;
+        right:4%;
+        top:70px;
+        flex-direction:column;
+        align-items:stretch;
+        padding:18px;
+        background:#07111f;
+        border:1px solid var(--line);
+        border-radius:18px;
+        box-shadow:var(--shadow)
       }
+
       .menu-btn{display:inline-flex}
       .desktop-cta{display:none}
       .hero{min-height:650px;padding-top:68px}
@@ -212,6 +562,7 @@
       .people-head{align-items:start;flex-direction:column}
       .cta{flex-direction:column;align-items:flex-start}
     }
+
     @media(max-width:620px){
       nav{height:70px}
       .brand span{display:none}
@@ -222,9 +573,16 @@
       .cta{padding:30px 22px}
       .person-meta{align-items:flex-start;flex-direction:column}
       .team-preview{padding:16px}
+
+      .social-link{
+        width:49px;
+        height:49px;
+        border-radius:14px;
+      }
     }
   </style>
 </head>
+
 <body>
 <header>
   <div class="wrap">
@@ -233,13 +591,21 @@
         <img src="assets/logo-solvi.png" alt="Logo Solvi IA">
         <span>Solvi IA</span>
       </a>
+
       <div class="navlinks" id="navlinks">
         <a href="#solucoes">Soluções</a>
         <a href="#como-funciona">Como funciona</a>
         <a href="#quem-atende">Quem atende</a>
         <a href="#equipe">Equipe</a>
       </div>
-      <a class="btn btn-primary desktop-cta" href="https://wa.me/5554996349062?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Solvi%20IA." target="_blank" rel="noopener">Vamos conversar</a>
+
+      <a class="btn btn-primary desktop-cta"
+         href="https://wa.me/5554996349062?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Solvi%20IA."
+         target="_blank"
+         rel="noopener">
+        Vamos conversar
+      </a>
+
       <button class="btn btn-soft menu-btn" id="menuBtn" aria-label="Abrir menu">Menu</button>
     </nav>
   </div>
@@ -250,11 +616,23 @@
     <div class="wrap hero-copy">
       <span class="pill">Inteligência Artificial aplicada ao que importa</span>
       <h1>Menos tarefas.<br><span class="accent">Mais tempo para crescer.</span></h1>
-      <p class="lead">A Solvi aproxima a Inteligência Artificial da rotina da sua empresa com atendimento, automação e apoio comercial sem complicação — começando pelo que realmente precisa ser resolvido.</p>
+
+      <p class="lead">
+        A Solvi aproxima a Inteligência Artificial da rotina da sua empresa com atendimento,
+        automação e apoio comercial sem complicação — começando pelo que realmente precisa ser resolvido.
+      </p>
+
       <div class="actions">
-        <a class="btn btn-primary" href="https://wa.me/5554996349062?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Solvi%20IA." target="_blank" rel="noopener">💬 Quero saber mais</a>
+        <a class="btn btn-primary"
+           href="https://wa.me/5554996349062?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Solvi%20IA."
+           target="_blank"
+           rel="noopener">
+          💬 Quero saber mais
+        </a>
+
         <a class="btn btn-soft" href="mailto:contato@solvi.ia.br">✉️ Fale por e-mail</a>
       </div>
+
       <div class="trust">
         <span>✓ Conversa humana</span>
         <span>✓ Implementação por etapas</span>
@@ -266,12 +644,39 @@
   <section id="solucoes">
     <div class="wrap">
       <span class="pill">Soluções</span>
-      <h2 style="margin-top:16px">Tecnologia que ajuda a empresa a <span class="accent">andar melhor.</span></h2>
-      <p class="section-lead">Começamos pequeno, validamos na prática e evoluímos junto com a operação.</p>
+
+      <h2 style="margin-top:16px">
+        Tecnologia que ajuda a empresa a <span class="accent">andar melhor.</span>
+      </h2>
+
+      <p class="section-lead">
+        Começamos pequeno, validamos na prática e evoluímos junto com a operação.
+      </p>
+
       <div class="services">
-        <article class="service"><div class="icon">💬</div><h3>Atendimento inteligente</h3><p>Organize entradas, respostas e encaminhamentos para reduzir espera e deixar o cliente mais bem atendido.</p></article>
-        <article class="service"><div class="icon">📈</div><h3>Vendas com apoio da IA</h3><p>Estruture contatos, qualifique oportunidades e ajude o comercial a chegar mais preparado à próxima conversa.</p></article>
-        <article class="service"><div class="icon">⚙️</div><h3>Automação útil</h3><p>Automatize tarefas repetitivas e conecte processos sem transformar a rotina em um projeto complicado.</p></article>
+        <article class="service">
+          <div class="icon">💬</div>
+          <h3>Atendimento inteligente</h3>
+          <p>
+            Organize entradas, respostas e encaminhamentos para reduzir espera e deixar o cliente mais bem atendido.
+          </p>
+        </article>
+
+        <article class="service">
+          <div class="icon">📈</div>
+          <h3>Vendas com apoio da IA</h3>
+          <p>
+            Estruture contatos, qualifique oportunidades e ajude o comercial a chegar mais preparado à próxima conversa.
+          </p>
+        </article>
+
+        <article class="service">
+          <div class="icon">⚙️</div>
+          <h3>Automação útil</h3>
+          <p>
+            Automatize tarefas repetitivas e conecte processos sem transformar a rotina em um projeto complicado.
+          </p>
+        </article>
       </div>
     </div>
   </section>
@@ -279,7 +684,8 @@
   <section aria-label="Identidade Solvi">
     <div class="wrap">
       <div class="brand-showcase">
-        <img src="assets/banner-solvi.webp" alt="Solvi IA — Atendimento, Vendas, Suporte, Automação e Inteligência Artificial">
+        <img src="assets/banner-solvi.webp"
+             alt="Solvi IA — Atendimento, Vendas, Suporte, Automação e Inteligência Artificial">
       </div>
     </div>
   </section>
@@ -288,13 +694,47 @@
     <div class="wrap how">
       <div>
         <span class="pill">Como funciona</span>
-        <h2 style="margin-top:16px">Primeiro entendemos.<br>Depois <span class="accent">automatizamos.</span></h2>
-        <p class="section-lead">A conversa começa pelo problema real da sua empresa, não pela tecnologia.</p>
+
+        <h2 style="margin-top:16px">
+          Primeiro entendemos.<br>
+          Depois <span class="accent">automatizamos.</span>
+        </h2>
+
+        <p class="section-lead">
+          A conversa começa pelo problema real da sua empresa, não pela tecnologia.
+        </p>
       </div>
+
       <div class="steps">
-        <div class="step"><div class="n">1</div><div><strong>Você conta onde dói</strong><span class="muted">Entendemos rotina, gargalos e o que hoje toma tempo da equipe.</span></div></div>
-        <div class="step"><div class="n">2</div><div><strong>Desenhamos um caminho simples</strong><span class="muted">Escolhemos o ponto em que a IA pode gerar ganho real sem exagero.</span></div></div>
-        <div class="step"><div class="n">3</div><div><strong>Testamos e evoluímos</strong><span class="muted">A solução entra por etapas, com espaço para ajustar antes de escalar.</span></div></div>
+        <div class="step">
+          <div class="n">1</div>
+          <div>
+            <strong>Você conta onde dói</strong>
+            <span class="muted">
+              Entendemos rotina, gargalos e o que hoje toma tempo da equipe.
+            </span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="n">2</div>
+          <div>
+            <strong>Desenhamos um caminho simples</strong>
+            <span class="muted">
+              Escolhemos o ponto em que a IA pode gerar ganho real sem exagero.
+            </span>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="n">3</div>
+          <div>
+            <strong>Testamos e evoluímos</strong>
+            <span class="muted">
+              A solução entra por etapas, com espaço para ajustar antes de escalar.
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -304,30 +744,66 @@
       <div class="people-head">
         <div>
           <span class="pill live-badge">● Atendimento inicial ativo</span>
-          <h2 style="margin-top:16px">Você fala com <span class="accent">pessoas próximas da operação.</span></h2>
-          <p class="section-lead">Neste primeiro momento, o contato da Solvi é conduzido por Lucas Toscan e Helena Valença.</p>
+
+          <h2 style="margin-top:16px">
+            Você fala com <span class="accent">pessoas próximas da operação.</span>
+          </h2>
+
+          <p class="section-lead">
+            Neste primeiro momento, o contato da Solvi é conduzido por Lucas Toscan e Helena Valença.
+          </p>
         </div>
       </div>
 
       <div class="people">
         <article class="person" aria-label="Contato Helena Valença">
           <img src="assets/helena-valenca.webp" alt="Helena Valença — Atendimento Solvi">
+
           <div class="person-meta">
-            <div><strong>Helena Valença</strong><br><small>Contato & Atendimento</small></div>
+            <div>
+              <strong>Helena Valença</strong><br>
+              <small>Contato & Atendimento</small>
+            </div>
+
             <div class="person-actions">
-              <a class="mini" href="https://wa.me/5554996349062?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Solvi%20IA." target="_blank" rel="noopener">WhatsApp</a>
-              <a class="mini" href="mailto:contato@solvi.ia.br" aria-label="Enviar e-mail para Helena Valença">E-mail</a>
+              <a class="mini"
+                 href="https://wa.me/5554996349062?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Solvi%20IA."
+                 target="_blank"
+                 rel="noopener">
+                WhatsApp
+              </a>
+
+              <a class="mini"
+                 href="mailto:contato@solvi.ia.br"
+                 aria-label="Enviar e-mail para Helena Valença">
+                E-mail
+              </a>
             </div>
           </div>
         </article>
 
         <article class="person" aria-label="Contato Lucas Toscan">
           <img src="assets/lucas-toscan.webp" alt="Lucas Toscan — CEO e Fundador da Solvi">
+
           <div class="person-meta">
-            <div><strong>Lucas Toscan</strong><br><small>CEO & Fundador</small></div>
+            <div>
+              <strong>Lucas Toscan</strong><br>
+              <small>CEO & Fundador</small>
+            </div>
+
             <div class="person-actions">
-              <a class="mini" href="https://wa.me/5554996349062?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Solvi%20IA." target="_blank" rel="noopener">WhatsApp</a>
-              <a class="mini" href="mailto:lucas@solvi.ia.br" aria-label="Enviar e-mail para Lucas Toscan">E-mail</a>
+              <a class="mini"
+                 href="https://wa.me/5554996349062?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Solvi%20IA."
+                 target="_blank"
+                 rel="noopener">
+                WhatsApp
+              </a>
+
+              <a class="mini"
+                 href="mailto:lucas@solvi.ia.br"
+                 aria-label="Enviar e-mail para Lucas Toscan">
+                E-mail
+              </a>
             </div>
           </div>
         </article>
@@ -338,16 +814,100 @@
   <section id="equipe">
     <div class="wrap">
       <div class="team-preview">
-        <button class="team-link" id="teamOpen" style="padding:0;background:none;color:inherit;text-align:left;cursor:pointer" aria-label="Ver equipe Solvi em preparação">
+        <button class="team-link"
+                id="teamOpen"
+                style="padding:0;background:none;color:inherit;text-align:left;cursor:pointer"
+                aria-label="Ver equipe Solvi em preparação">
+
           <img src="assets/equipe-solvi.webp" alt="Equipe de agentes Solvi em preparação">
-          <span class="soon"><span><b>Equipe Solvi</b><br><small>Estrutura completa em preparação</small></span><strong>Ver prévia →</strong></span>
+
+          <span class="soon">
+            <span>
+              <b>Equipe Solvi</b><br>
+              <small>Estrutura completa em preparação</small>
+            </span>
+            <strong>Ver prévia →</strong>
+          </span>
         </button>
+
         <div>
           <span class="pill">Em breve</span>
-          <h2 style="margin-top:16px">Uma equipe especializada para cada etapa.</h2>
-          <p class="section-lead">Atendimento, comercial, suporte, financeiro, administrativo e SAC fazem parte da estrutura planejada. A operação completa ainda será ativada gradualmente.</p>
-          <div class="actions">
-            <a class="btn btn-soft" href="https://wa.me/5554996349062?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Solvi%20IA." target="_blank" rel="noopener">Quero acompanhar a Solvi</a>
+
+          <h2 style="margin-top:16px">
+            Uma equipe especializada para cada etapa.
+          </h2>
+
+          <p class="section-lead">
+            Atendimento, comercial, suporte, financeiro, administrativo e SAC fazem parte da estrutura planejada.
+            A operação completa ainda será ativada gradualmente.
+          </p>
+
+          <!--
+            REDES SOCIAIS
+            Por enquanto os links estão como "#".
+            Quando você tiver os endereços oficiais, troque somente o href de cada item.
+          -->
+          <div class="social-follow">
+            <span class="social-follow-title">Quero acompanhar a Solvi</span>
+
+            <div class="social-links" aria-label="Redes sociais da Solvi IA">
+
+              <!-- Instagram -->
+              <a class="social-link"
+                 href="#"
+                 data-social-pendente="true"
+                 aria-label="Instagram da Solvi IA — link em breve"
+                 title="Instagram — link em breve">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5Zm9.75 1.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+                </svg>
+              </a>
+
+              <!-- Facebook -->
+              <a class="social-link"
+                 href="#"
+                 data-social-pendente="true"
+                 aria-label="Facebook da Solvi IA — link em breve"
+                 title="Facebook — link em breve">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M13.5 22v-9h3l.45-3.5H13.5V7.25c0-1.01.28-1.7 1.73-1.7H17V2.42A23.6 23.6 0 0 0 14.4 2C11.83 2 10 3.57 10 6.45V9.5H7V13h3v9h3.5Z"/>
+                </svg>
+              </a>
+
+              <!-- X -->
+              <a class="social-link"
+                 href="#"
+                 data-social-pendente="true"
+                 aria-label="X da Solvi IA — link em breve"
+                 title="X — link em breve">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.39L6.48 22H3.36l7.26-8.3L2.98 2h6.4l4.42 5.84L18.9 2Zm-1.1 17.84h1.73L8.44 4.05H6.58L17.8 19.84Z"/>
+                </svg>
+              </a>
+
+              <!-- WhatsApp -->
+              <a class="social-link"
+                 href="#"
+                 data-social-pendente="true"
+                 aria-label="WhatsApp da Solvi IA — link em breve"
+                 title="WhatsApp — link em breve">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20.52 3.48A11.8 11.8 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.16 1.6 5.98L.05 24l6.23-1.64a11.9 11.9 0 0 0 5.8 1.48h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.18-3.5-8.43ZM12.09 21.82h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.7.97.99-3.6-.23-.37a9.88 9.88 0 0 1-1.52-5.3C2.22 6.47 6.64 2.05 12.1 2.05c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.43 9.88-9.89 9.88Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.08-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.49 1.7.63.71.23 1.36.19 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+                </svg>
+              </a>
+
+              <!-- Telegram -->
+              <a class="social-link"
+                 href="#"
+                 data-social-pendente="true"
+                 aria-label="Telegram da Solvi IA — link em breve"
+                 title="Telegram — link em breve">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21.94 2.34 18.7 20.2c-.24 1.26-.9 1.57-1.82.98l-4.93-3.63-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.15 13.96l-4.87-1.52c-1.06-.33-1.08-1.06.22-1.57L20.55 3.53c.88-.33 1.65.2 1.39-1.19Z"/>
+                </svg>
+              </a>
+
+            </div>
           </div>
         </div>
       </div>
@@ -359,12 +919,28 @@
       <div class="cta">
         <div>
           <span class="pill">Vamos conversar?</span>
-          <h2 style="margin-top:16px">Conte o que você quer melhorar. A gente começa por aí.</h2>
-          <p class="contact-note">Sem formulário longo. Você pode falar direto pelo WhatsApp com a mensagem já pronta ou enviar um e-mail para <strong>contato@solvi.ia.br</strong>.</p>
+
+          <h2 style="margin-top:16px">
+            Conte o que você quer melhorar. A gente começa por aí.
+          </h2>
+
+          <p class="contact-note">
+            Sem formulário longo. Você pode falar direto pelo WhatsApp com a mensagem já pronta
+            ou enviar um e-mail para <strong>contato@solvi.ia.br</strong>.
+          </p>
         </div>
+
         <div class="actions">
-          <a class="btn btn-primary" href="https://wa.me/5554996349062?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Solvi%20IA." target="_blank" rel="noopener">💬 Quero saber mais</a>
-          <a class="btn btn-soft" href="mailto:contato@solvi.ia.br">✉️ Fale por e-mail</a>
+          <a class="btn btn-primary"
+             href="https://wa.me/5554996349062?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Solvi%20IA."
+             target="_blank"
+             rel="noopener">
+            💬 Quero saber mais
+          </a>
+
+          <a class="btn btn-soft" href="mailto:contato@solvi.ia.br">
+            ✉️ Fale por e-mail
+          </a>
         </div>
       </div>
     </div>
@@ -373,16 +949,30 @@
 
 <footer>
   <div class="wrap foot">
-    <div class="foot-logo"><img src="assets/logo-solvi.png" alt=""><span>Solvi IA · Inteligência que resolve.</span></div>
+    <div class="foot-logo">
+      <img src="assets/logo-solvi.png" alt="">
+      <span>Solvi IA · Inteligência que resolve.</span>
+    </div>
+
     <span>© 2026 Solvi IA. Todos os direitos reservados.</span>
   </div>
 </footer>
 
-<div class="modal" id="teamModal" role="dialog" aria-modal="true" aria-label="Prévia da equipe Solvi">
+<div class="modal"
+     id="teamModal"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Prévia da equipe Solvi">
+
   <div class="modal-card">
     <img src="assets/equipe-solvi.webp" alt="Prévia da equipe Solvi">
+
     <div class="modal-bar">
-      <div><strong>Equipe Solvi</strong><br><span class="muted">Em preparação — ativação gradual dos setores.</span></div>
+      <div>
+        <strong>Equipe Solvi</strong><br>
+        <span class="muted">Em preparação — ativação gradual dos setores.</span>
+      </div>
+
       <button class="close" id="teamClose">Fechar</button>
     </div>
   </div>
@@ -391,16 +981,37 @@
 <script>
   const menuBtn = document.getElementById('menuBtn');
   const navlinks = document.getElementById('navlinks');
+
   menuBtn?.addEventListener('click', () => navlinks.classList.toggle('open'));
-  navlinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navlinks.classList.remove('open')));
+
+  navlinks?.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => navlinks.classList.remove('open'))
+  );
 
   const teamOpen = document.getElementById('teamOpen');
   const teamModal = document.getElementById('teamModal');
   const teamClose = document.getElementById('teamClose');
+
   teamOpen?.addEventListener('click', () => teamModal.classList.add('open'));
   teamClose?.addEventListener('click', () => teamModal.classList.remove('open'));
-  teamModal?.addEventListener('click', e => { if (e.target === teamModal) teamModal.classList.remove('open'); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') teamModal?.classList.remove('open'); });
+
+  teamModal?.addEventListener('click', e => {
+    if (e.target === teamModal) teamModal.classList.remove('open');
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') teamModal?.classList.remove('open');
+  });
+
+  /*
+    Enquanto as redes sociais ainda não tiverem os links oficiais,
+    os ícones permanecem visíveis, mas não navegam para "#".
+    Quando você substituir o href="#" pelo link real,
+    remova também data-social-pendente="true" daquele ícone.
+  */
+  document.querySelectorAll('[data-social-pendente="true"]').forEach(link => {
+    link.addEventListener('click', event => event.preventDefault());
+  });
 </script>
 </body>
 </html>
