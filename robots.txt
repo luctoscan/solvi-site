@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /modelos/
+Sitemap: https://solvi.ia.br/sitemap.xml
