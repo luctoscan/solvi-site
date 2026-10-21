@@ -113,3 +113,14 @@
 .solvi-home .hero{padding-top:26px}
 @media(max-width:680px){.solvi-home .hero{padding-top:22px}}
 @media(max-width:680px){.solvi-home .thumb.photo-thumb strong{opacity:1;transform:none}.solvi-home .hero .eyebrow{font-size:10px;letter-spacing:1.4px}.solvi-home .hero h1{font-size:clamp(42px,13.3vw,52px)}}
+
+/* SOLVI MOBILE START */
+@keyframes solviMobileCardEnter{from{opacity:.45;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:680px),(pointer:coarse){
+ .solvi-home .model .thumb strong{opacity:1;transform:none}
+ .solvi-home .model.mobile-card-enter{animation:solviMobileCardEnter .6s cubic-bezier(.2,.7,.3,1) both}
+ .solvi-home .model:active .thumb{transform:scale(.985);filter:brightness(1.07)}
+ .solvi-home .model .thumb{transition:transform .18s ease,filter .18s ease}
+}
+@media(prefers-reduced-motion:reduce){.solvi-home .model.mobile-card-enter{animation:none!important}.solvi-home .model:active .thumb{transform:none;filter:none}}
+/* SOLVI MOBILE END */
